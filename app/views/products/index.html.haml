@@ -1,0 +1,25 @@
+%h1 Listing products
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Price
+    %th Image
+    %th
+    %th
+    %th
+
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= simple_format(product.description)
+      %td= product.price
+      %td= image_tag(product.image_url,size: "32x32") if product.image?
+      %td= link_to 'Show', product
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_product_path

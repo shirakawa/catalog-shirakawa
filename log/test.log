@@ -1,0 +1,135 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+Started GET "/products" for 127.0.0.1 at 2013-02-06 20:13:01 +0900
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" 
+  Rendered products/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 322ms (Views: 103.4ms | ActiveRecord: 20.9ms)
+Started GET "/products/new" for 127.0.0.1 at 2013-02-06 20:13:02 +0900
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.haml (85.3ms)
+  Rendered products/new.html.haml within layouts/application (109.9ms)
+Completed 200 OK in 125ms (Views: 113.5ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2013-02-06 20:13:02 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"テスト用の商品", "description"=>"てすとです", "price"=>"1000", "image_cache"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+  [1m[36mSQL (7.6ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 06 Feb 2013 11:13:02 UTC +00:00], ["description", "てすとです"], ["image", nil], ["name", "テスト用の商品"], ["price", 1000], ["updated_at", Wed, 06 Feb 2013 11:13:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 130ms (ActiveRecord: 8.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:13:02 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (150.5ms)
+Completed 200 OK in 157ms (Views: 154.2ms | ActiveRecord: 0.3ms)
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:13:02 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (2.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+Started GET "/products" for 127.0.0.1 at 2013-02-06 20:16:31 +0900
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" 
+  Rendered products/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 327ms (Views: 108.5ms | ActiveRecord: 20.9ms)
+Started GET "/products/new" for 127.0.0.1 at 2013-02-06 20:16:32 +0900
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.haml (87.6ms)
+  Rendered products/new.html.haml within layouts/application (113.0ms)
+Completed 200 OK in 129ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2013-02-06 20:16:32 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"テスト用の商品", "description"=>"てすとです", "price"=>"1000", "image_cache"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+  [1m[36mSQL (7.7ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 06 Feb 2013 11:16:33 UTC +00:00], ["description", "てすとです"], ["image", nil], ["name", "テスト用の商品"], ["price", 1000], ["updated_at", Wed, 06 Feb 2013 11:16:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 130ms (ActiveRecord: 8.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:16:33 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (153.2ms)
+Completed 200 OK in 160ms (Views: 156.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (2.5ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+Started GET "/products" for 127.0.0.1 at 2013-02-06 20:19:03 +0900
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" 
+  Rendered products/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 326ms (Views: 105.4ms | ActiveRecord: 21.6ms)
+Started GET "/products/new" for 127.0.0.1 at 2013-02-06 20:19:04 +0900
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.haml (86.9ms)
+  Rendered products/new.html.haml within layouts/application (112.3ms)
+Completed 200 OK in 128ms (Views: 115.9ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2013-02-06 20:19:04 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"テスト用の商品", "description"=>"てすとです", "price"=>"1000", "image_cache"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+  [1m[36mSQL (7.8ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 06 Feb 2013 11:19:04 UTC +00:00], ["description", "てすとです"], ["image", nil], ["name", "テスト用の商品"], ["price", 1000], ["updated_at", Wed, 06 Feb 2013 11:19:04 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 134ms (ActiveRecord: 8.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:19:04 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (150.6ms)
+Completed 200 OK in 157ms (Views: 154.3ms | ActiveRecord: 0.3ms)
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1[0m
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:19:04 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (2.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+Started GET "/products" for 127.0.0.1 at 2013-02-06 20:30:18 +0900
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" 
+  Rendered products/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 327ms (Views: 107.7ms | ActiveRecord: 20.9ms)
+Started GET "/products/new" for 127.0.0.1 at 2013-02-06 20:30:19 +0900
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.haml (84.3ms)
+  Rendered products/new.html.haml within layouts/application (108.3ms)
+Completed 200 OK in 123ms (Views: 111.8ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2013-02-06 20:30:19 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"テスト用の商品", "description"=>"てすとです", "price"=>"1000", "image_cache"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT 1 AS one FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+  [1m[36mSQL (7.6ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 06 Feb 2013 11:30:20 UTC +00:00], ["description", "てすとです"], ["image", nil], ["name", "テスト用の商品"], ["price", 1000], ["updated_at", Wed, 06 Feb 2013 11:30:20 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 129ms (ActiveRecord: 8.0ms)
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:30:20 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (150.0ms)
+Completed 200 OK in 157ms (Views: 153.7ms | ActiveRecord: 0.3ms)
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."name" = 'テスト用の商品' LIMIT 1[0m
+Started GET "/products/1" for 127.0.0.1 at 2013-02-06 20:30:20 +0900
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered products/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (3.5ms)[0m  [1mrollback transaction[0m

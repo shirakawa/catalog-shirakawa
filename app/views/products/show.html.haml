@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p.name
+  %b Name:
+  = @product.name
+.description
+  %b Description:
+  = simple_format(@product.description)
+%p.price
+  %b Price:
+  = @product.price
+%p.image
+  %b Image:
+  = image_tag(@product.image_url) if @product.image?
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path
